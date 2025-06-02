@@ -1,0 +1,84 @@
+<mvc:View controllerName="project1.controller.MainView"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox id="vBox" class="sapUiSmallMargin">
+                <f:SimpleForm id="SimpleFormToolbar"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="4"
+                    labelSpanL="3"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="0"
+                    emptySpanL="4"
+                    emptySpanM="0"
+                    emptySpanS="0"
+                    columnsXL="2"
+                    columnsL="1"
+                    columnsM="1" 
+                    singleContainerFullSize="false"
+                    ariaLabelledBy="Title1" >
+                    <f:content>
+                        <Toolbar id="tbTitle">
+                            <Title id="Title1" text="Exercise 01 - Simple UI Form"/>
+                            <ToolbarSpacer id="tbSpacer2"/>                            
+                        </Toolbar>
+                        <Label id="lblName" text="Name" />
+                        <Input id="inptName" value="{SupplierName}" />
+                        <Label id="lblStreet" text="Street/No." />
+                        <Input id="inptStreet" value="{Street}">
+                        </Input>
+                        <Input id="inptHouse" value="{HouseNumber}">
+                            <layoutData>
+                                <l:GridData id="gridHouse"  span="XL2 L1 M3 S4" />
+                            </layoutData>
+                        </Input>
+                        <Label id="lblZip" text="ZIP Code/City" />
+                        <Input id="inptZip" value="{ZIPCode}">
+                            <layoutData>
+                                <l:GridData id="gridZip" span="XL2 L1 M3 S4" />
+                            </layoutData>
+                        </Input>
+                        <Input id="lblCity" value="{City}" />
+                        <Label id="inptCountry" text="Country" />
+                        <Select id="country" selectedKey="{Country}">
+                            <items>
+                                <core:Item id="itmEngland" text="England" key="England"/>
+                                <core:Item id="itmGermany" text="Germany" key="Germany"/>
+                                <core:Item id="itmUSA" text="USA" key="USA"/>
+                                <core:Item id="itmPhilippines" text="Philippines" key="Philippines"/>
+                            </items>
+                        </Select>                        				
+                    </f:content>                        
+                </f:SimpleForm>
+	        </VBox>                
+        </content>
+        <footer>
+            <OverflowToolbar id="idOFTFooter">
+                <ToolbarSpacer id="tSpacerFooter"/>
+                <Button id="btnSave" type="Accept"
+                        text="Save"
+                        press="onPress"
+                        ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+                            <layoutData>
+                                <FlexItemData id="flexSave" growFactor="1" />
+                            </layoutData>
+                </Button>
+                <Button id="btnClear" type="Reject"
+                        text="Clear"
+                        press="onPress"
+                        ariaDescribedBy="rejectButtonDescription genericButtonDescription">
+                          <layoutData>
+                            <FlexItemData id="flexClear" growFactor="1" />
+                         </layoutData>
+                </Button>
+            </OverflowToolbar>
+        </footer>        
+    </Page>
+</mvc:View>
